@@ -1,3 +1,3 @@
 export interface contracts {
-    contractId : string;
+    contractId: string;
 }

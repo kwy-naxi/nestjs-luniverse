@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { ApinftService } from './apinft.service';
 import { CreateAuthDto } from './CreateAuthDto';
 
@@ -16,5 +16,15 @@ export class ApinftController {
     @Post()
     async create(@Body() createAuthDto: CreateAuthDto) { 
         return await this.apinftService.create(createAuthDto);
+    }
+
+    @Get('contractlist')
+    contractFindAll() {
+        return this.apinftService.contractFindAll();
+    }
+
+    @Get('/contract')
+    contractFindOne(@Query('id')id :string): Promise<any> {
+        return this.apinftService.contractFindOne(id);
     }
 }

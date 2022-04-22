@@ -3,3 +3,7 @@ export interface myAuth {
     secretKey: string;
     expiresIn: number;
 }
+
+export interface tokenKey{
+    luniverseAuth: string;
+}
